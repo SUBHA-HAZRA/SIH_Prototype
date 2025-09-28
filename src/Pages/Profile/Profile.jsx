@@ -1,12 +1,12 @@
 import React from "react";
 
-const Profile = () => {
+const Profile = ({ title, name, image, joined }) => {
   return (
     <div className="min-h-screen bg-[#EAE8FF] text-gray-900 flex items-center justify-center p-4">
       <main className="w-full max-w-4xl">
         {/* Page Title */}
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-6 sm:mb-8 text-gray-800">
-          User Profile
+          {title}
         </h1>
 
         {/* Profile Section */}
@@ -14,14 +14,14 @@ const Profile = () => {
           {/* Header */}
           <header className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-6 py-6 sm:py-8 bg-[#21BCFF] text-white">
             <img
-              src="https://cutiedp.com/wp-content/uploads/2025/07/cartoon-boy-dp-49.webp"
+              src={image}
               alt="Profile avatar"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-md object-cover"
             />
             <div className="text-center sm:text-left flex-1">
               <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-2 sm:gap-3">
                 <h2 className="text-xl sm:text-2xl font-semibold leading-none">
-                  Sophia Clark
+                  {name}
                 </h2>
                 <button
                   type="button"
@@ -30,7 +30,9 @@ const Profile = () => {
                   Edit
                 </button>
               </div>
-              <p className="mt-1 sm:mt-2 text-sm text-blue-100">Joined in 2022</p>
+              <p className="mt-1 sm:mt-2 text-sm text-blue-100">
+                Joined in {joined}
+              </p>
             </div>
           </header>
 
@@ -44,6 +46,7 @@ const Profile = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={name}
                   className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                   placeholder="Enter your full name"
                 />
@@ -89,7 +92,8 @@ const Profile = () => {
                     className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <span className="text-gray-700 text-sm sm:text-base">
-                    Receive email notifications about new hazard reports in your area.
+                    Receive email notifications about new hazard reports in your
+                    area.
                   </span>
                 </label>
 

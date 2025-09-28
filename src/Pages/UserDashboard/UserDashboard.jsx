@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { FaUserCircle, FaFileAlt, FaUser, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaFileAlt,
+  FaUser,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
 const UserDashboard = () => {
   const location = useLocation();
@@ -76,9 +82,12 @@ const UserDashboard = () => {
 
           {/* Logout Button */}
           <div className="mt-auto p-1 mb-4">
-            <button className="w-full py-3 px-4 bg-[#D8DBF0] text-black rounded-lg font-semibold hover:bg-[#C0C4E0] transition-colors duration-300 flex items-center justify-center gap-2">
+            <Link
+              to="/"
+              className="w-full py-3 px-4 bg-[#D8DBF0] text-black rounded-lg font-semibold hover:bg-[#C0C4E0] transition-colors duration-300 flex items-center justify-center gap-2"
+            >
               <FaUserCircle /> Logout
-            </button>
+            </Link>
           </div>
         </nav>
       </div>
